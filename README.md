@@ -1,1 +1,2 @@
-# config
+# Configuration 
+vim personal configuration
