@@ -8,7 +8,6 @@
 "                 ╚═══╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" source: https://www.freecodecamp.org/news/vimrc-configuration-guide-customize-your-vim-editor/
 set number
 set numberwidth=1
 set mouse=r
@@ -44,7 +43,12 @@ set showmatch
 " Use highlighting when doing a search.
 set hlsearch
 
+
+
 let g:airline#extensions#tabline#enabled = 1
+
+" Set indent line character
+let g:indentLine_char = '|'
 
 
 filetype on
@@ -63,6 +67,9 @@ call plug#begin('~/.vim/plugged')
 	Plug 'vim-airline/vim-airline'
 	Plug 'preservim/nerdtree'
 	Plug 'jiangmiao/auto-pairs'
+	Plug 'davidhalter/jedi-vim'
+	Plug 'Yggdroot/indentLine'
+	"Plug 'preservim/nerdcommenter'
 call plug#end()
 
 
@@ -87,6 +94,8 @@ nnoremap Y y$
 " !clear runs the external clear screen command.
 " !python3 % executes the current file with Python.
 nnoremap <f5> :w <CR>:!clear <CR>:!python3 % <CR>
+
+
 
 " You can split the window in Vim by typing :split or :vsplit.
 " Navigate the split view easier by pressing CTRL+j, CTRL+k, CTRL+h, or CTRL+l.
@@ -118,14 +127,6 @@ if version >= 703
     set undofile
     set undoreload=10000
 endif
-
-" You can split a window into sections by typing `:split` or `:vsplit`.
-" Display cursorline and cursorcolumn ONLY in active window.
-augroup cursor_off
-    autocmd!
-    autocmd WinLeave * set nocursorline nocursorcolumn
-    autocmd WinEnter * set cursorline cursorcolumn
-augroup END
 
 " If GUI version of Vim is running set these options.
 if has('gui_running')
