@@ -87,6 +87,9 @@ nnoremap N Nzz
 " Yank from cursor to the end of line.
 nnoremap Y y$
 
+"Find and replace 
+nnoremap rrr :%s/
+
 " Map the F5 key to run a Python script inside Vim.
 " I map F5 to a chain of commands here.
 " :w saves the file.
