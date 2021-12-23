@@ -87,7 +87,7 @@ nnoremap N Nzz
 " Yank from cursor to the end of line.
 nnoremap Y y$
 
-"Find and replace 
+"Find and replace /toBeReplaced/replaceWith/c (to ask for confirmation)
 nnoremap rrr :%s/
 
 " Map the F5 key to run a Python script inside Vim.
